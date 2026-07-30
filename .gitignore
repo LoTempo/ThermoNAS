@@ -1,28 +1,30 @@
-# Виртуальное окружение
+# Virtual environments
 .venv/
 venv/
 env/
 
-# Python
+# Python caches and tooling
 __pycache__/
 *.py[cod]
-*.pyo
-*.pyd
-
-# PyCharm
-.idea/
-
-# Переменные окружения и секреты
-.env
-
-# Тесты и служебные файлы
 .pytest_cache/
+.ruff_cache/
+.mypy_cache/
 .coverage
 htmlcov/
 
-# Локальные данные
-instance/
+# Packaging and build output
+build/
+dist/
+*.egg-info/
+*.spec.bak
 
-# Системные файлы
+# IDE and OS metadata
+.idea/
+.vscode/
 .DS_Store
 Thumbs.db
+
+# Local settings and scratch files
+.env
+instance/
+tmp/

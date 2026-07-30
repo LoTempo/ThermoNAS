@@ -1,0 +1,622 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1350</width>
+    <height>984</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>ThermoNAS</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string notr="true">background-color: rgb(139, 139, 139);
+font-family: Arial;
+</string>
+   </property>
+   <widget class="QPushButton" name="pushButton_2">
+    <property name="geometry">
+     <rect>
+      <x>530</x>
+      <y>460</y>
+      <width>261</width>
+      <height>21</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton {
+background-color: rgba(255, 255, 255,100);
+border: 1px solid rgba(255, 255, 255, 200);
+border-radius: 7px;
+color: white;
+font-weight: bold;
+font-size: 12pt;
+}
+QPushButton:hover {
+background-color: rgba(255, 255, 255,130);
+}
+QPushButton:pressed {
+background-color: rgba(255, 255, 255,190)
+}</string>
+    </property>
+    <property name="text">
+     <string>Compute</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_49">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>20</y>
+      <width>921</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255,100);
+border: 1px solid rgba(255, 255, 255, 120);
+border-radius: 7px;
+color: white;
+font-weight: bold;
+font-size: 18pt;</string>
+    </property>
+    <property name="text">
+     <string>Setup</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_50">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>20</y>
+      <width>381</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255,100);
+border: 1px solid rgba(255, 255, 255, 120);
+border-radius: 7px;
+color: white;
+font-weight: bold;
+font-size: 18pt;</string>
+    </property>
+    <property name="text">
+     <string>Results</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignmentFlag::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QFrame" name="frame1">
+    <property name="geometry">
+     <rect>
+      <x>950</x>
+      <y>70</y>
+      <width>381</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255,50);
+border: 1px solid rgba(255, 255, 255, 60);
+border-radius: 7px;
+color: white;
+font-weight: bold;
+font-size: 12pt;</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout_2">
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_58">
+       <property name="text">
+        <string>Pressure drop [Pa]</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_59">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Average fluid outlet temp. [&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_61">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLabel" name="label_62">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QFrame" name="frame2">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>70</y>
+      <width>921</width>
+      <height>381</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255,50);
+border: 1px solid rgba(255, 255, 255, 60);
+border-radius: 7px;
+color: white;
+font-weight: bold;
+font-size: 12pt;</string>
+    </property>
+    <layout class="QGridLayout" name="gridLayout">
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_47">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ambient temp. 2 / &lt;span style=&quot; font-style:italic;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;ext&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; [&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="3">
+      <widget class="QLineEdit" name="lineEdit_F_vel">
+       <property name="text">
+        <string>0.0001</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="1">
+      <widget class="QLineEdit" name="lineEdit_T_low">
+       <property name="text">
+        <string>50</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Width / &lt;span style=&quot; font-style:italic;&quot;&gt;H&lt;/span&gt; [m]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="2">
+      <widget class="QLabel" name="label_45">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of y-coordinate steps / &lt;span style=&quot; font-style:italic;&quot;&gt;N&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;y&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="2">
+      <widget class="QLabel" name="label_31">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Porosity / &lt;span style=&quot; font-style:italic;&quot;&gt;ϕ&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="0">
+      <widget class="QLabel" name="label_52">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Lower wall temp. / &lt;span style=&quot; font-style:italic;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;l&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;w &lt;/span&gt;[&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="3">
+      <widget class="QLineEdit" name="lineEdit_F_visc">
+       <property name="text">
+        <string>0.001003</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="1">
+      <widget class="QLineEdit" name="lineEdit_S_den">
+       <property name="text">
+        <string>1412</string>
+       </property>
+      </widget>
+     </item>
+     <item row="13" column="3">
+      <widget class="QLineEdit" name="lineEdit_Y">
+       <property name="text">
+        <string>100</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Ambient temp. 1 / &lt;span style=&quot; font-style:italic;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;ext&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;1&lt;/span&gt; [&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="3">
+      <widget class="QLineEdit" name="lineEdit_F_keff">
+       <property name="text">
+        <string>0.239</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_17">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Solid thermal cond. / &lt;span style=&quot; font-style:italic;&quot;&gt;k&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;ms  &lt;/span&gt;[W/(m·&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C)]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="3">
+      <widget class="QLineEdit" name="lineEdit_X">
+       <property name="text">
+        <string>100</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Solid initial temp. / &lt;span style=&quot; font-style:italic;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt; [&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="3">
+      <widget class="QLineEdit" name="lineEdit_poros">
+       <property name="text">
+        <string>0.7</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="2">
+      <widget class="QLabel" name="label_20">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fluid effective thermal cond. / &lt;span style=&quot; font-style:italic;&quot;&gt;k&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;f   &lt;/span&gt;[W/(m·&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C)]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+          <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Length / &lt;span style=&quot; font-style:italic;&quot;&gt;L&lt;/span&gt; [m]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="2">
+      <widget class="QLabel" name="label_18">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Solid effective thermal cond. / &lt;span style=&quot; font-style:italic;&quot;&gt;k&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;s &lt;/span&gt;[W/(m·&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C)]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="2">
+      <widget class="QLabel" name="label_33">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fluid velocity / &lt;span style=&quot; font-style:italic;&quot;&gt;u&lt;/span&gt; [m/s]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="3">
+      <widget class="QLineEdit" name="lineEdit_S_keff">
+       <property name="text">
+        <string>0.082</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="3">
+      <widget class="QLineEdit" name="lineEdit_h_1">
+       <property name="text">
+        <string>1000</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="2">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fluid-Solid heat transfer coeff. / &lt;span style=&quot; font-style:italic;&quot;&gt;h&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;fs&lt;/span&gt; [W/(m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;·&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C)]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="0">
+      <widget class="QLabel" name="label_51">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Upper wall temp. / &lt;span style=&quot; font-style:italic;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;uw  &lt;/span&gt;[&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="0">
+      <widget class="QLabel" name="label_29">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fluid specific heat capacity / &lt;span style=&quot; font-style:italic;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;f&lt;/span&gt; [J/(kg·&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C)]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="3">
+      <widget class="QLineEdit" name="lineEdit_h_2">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="3">
+      <widget class="QLineEdit" name="lineEdit_h_sf">
+       <property name="text">
+        <string>500</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="2">
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Heat transfer coeff. 2 / &lt;span style=&quot; font-style:italic;&quot;&gt;h&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;ext&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;2&lt;/span&gt; [W/(m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;·&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C)]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="2">
+      <widget class="QLabel" name="label_42">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Time step / Δ&lt;span style=&quot; font-style:italic;&quot;&gt;t&lt;/span&gt; [s]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLineEdit" name="lineEdit_L">
+       <property name="text">
+        <string>0.02</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QLineEdit" name="lineEdit_W">
+       <property name="text">
+        <string>0.01</string>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_25">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Solid density / &lt;span style=&quot; font-style:italic;&quot;&gt;ρ&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;s&lt;/span&gt; [kg/m&lt;span style=&quot; vertical-align:super;&quot;&gt;3&lt;/span&gt;]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="1">
+      <widget class="QLineEdit" name="lineEdit_Perm">
+       <property name="text">
+        <string>8.435e-9</string>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="1">
+      <widget class="QLineEdit" name="lineEdit_S_T_init">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="3">
+      <widget class="QLineEdit" name="lineEdit_S_k">
+       <property name="text">
+        <string>0.375</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="1">
+      <widget class="QLineEdit" name="lineEdit_F_den">
+       <property name="text">
+        <string>1000</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="0">
+      <widget class="QLabel" name="label_27">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Solid specific heat capacity / &lt;span style=&quot; font-style:italic;&quot;&gt;c&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;s&lt;/span&gt; [J/(kg·&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C)]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="0">
+      <widget class="QLabel" name="label_37">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Permeability / &lt;span style=&quot; font-style:italic;&quot;&gt;K&lt;/span&gt; [m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="2">
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Heat transfer coeff. 1 / &lt;span style=&quot; font-style:italic;&quot;&gt;h&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;ext&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;1&lt;/span&gt; [W/(m&lt;span style=&quot; vertical-align:super;&quot;&gt;2&lt;/span&gt;·&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C)]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QLineEdit" name="lineEdit_T_amb1">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="2">
+      <widget class="QLabel" name="label_39">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of time steps / &lt;span style=&quot; font-style:italic;&quot;&gt;M&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="2">
+      <widget class="QLabel" name="label_35">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fluid viscosity / &lt;span style=&quot; font-style:italic;&quot;&gt;μ&lt;/span&gt; [Pa·s]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="1">
+      <widget class="QLineEdit" name="lineEdit_F_capac">
+       <property name="text">
+        <string>4200</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="1">
+      <widget class="QLineEdit" name="lineEdit_T_up">
+       <property name="text">
+        <string>50</string>
+       </property>
+      </widget>
+     </item>
+     <item row="9" column="0">
+      <widget class="QLabel" name="label_16">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fluid density / &lt;span style=&quot; font-style:italic;&quot;&gt;ρ&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;f&lt;/span&gt; [kg/m&lt;span style=&quot; vertical-align:super;&quot;&gt;3&lt;/span&gt;]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="1">
+      <widget class="QLineEdit" name="lineEdit_F_T_init">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="11" column="3">
+      <widget class="QLineEdit" name="lineEdit_t">
+       <property name="text">
+        <string>32000</string>
+       </property>
+      </widget>
+     </item>
+     <item row="12" column="2">
+      <widget class="QLabel" name="label_43">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Number of x-coordinate steps / &lt;span style=&quot; font-style:italic;&quot;&gt;N&lt;/span&gt;&lt;span style=&quot; font-style:italic; vertical-align:sub;&quot;&gt;x&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="10" column="3">
+      <widget class="QLineEdit" name="lineEdit_t_step">
+       <property name="text">
+        <string>0.01</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <widget class="QLineEdit" name="lineEdit_T_amb2">
+       <property name="text">
+        <string>0</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Fluid initial temp. / &lt;span style=&quot; font-style:italic;&quot;&gt;T&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;0&lt;/span&gt; [&lt;span style=&quot; vertical-align:super;&quot;&gt;o&lt;/span&gt;C]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="8" column="1">
+      <widget class="QLineEdit" name="lineEdit_S_capac">
+       <property name="text">
+        <string>800</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="0">
+      <widget class="QLabel" name="label_53">
+       <property name="text">
+        <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Specific surface area / &lt;span style=&quot; font-style:italic;&quot;&gt;A&lt;/span&gt;&lt;span style=&quot; vertical-align:sub;&quot;&gt;0 &lt;/span&gt;[m&lt;span style=&quot; vertical-align:super;&quot;&gt;-1&lt;/span&gt;]&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="1">
+      <widget class="QLineEdit" name="lineEdit_A_0">
+       <property name="text">
+        <string>469</string>
+       </property>
+      </widget>
+     </item>
+     <item row="14" column="2" colspan="2">
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="styleSheet">
+        <string notr="true">QPushButton {
+background-color: rgba(255, 255, 255,100);
+border: 1px solid rgba(255, 255, 255, 200);
+border-radius: 7px;
+color: white;
+font-weight: bold;
+font-size: 12pt;
+}
+QPushButton:hover {
+background-color: rgba(255, 255, 255,130);
+}
+QPushButton:pressed {
+background-color: rgba(255, 255, 255,190)
+}</string>
+       </property>
+       <property name="text">
+          <string>Suggest time step</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="widget" native="true">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>490</y>
+      <width>1311</width>
+      <height>411</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255,50);
+border: 1px solid rgba(255, 255, 255, 60);
+border-radius: 7px;
+color: white;
+font-weight: bold;
+font-size: 12pt;</string>
+    </property>
+   </widget>
+   <widget class="QSlider" name="horizontalSlider">
+    <property name="geometry">
+     <rect>
+      <x>20</x>
+      <y>910</y>
+      <width>1311</width>
+      <height>22</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(255, 255, 255,50);
+border: 1px solid rgba(255, 255, 255, 60);
+border-radius: 7px;
+color: white;
+font-weight: bold;
+font-size: 12pt;</string>
+    </property>
+    <property name="orientation">
+     <enum>Qt::Orientation::Horizontal</enum>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1350</width>
+     <height>22</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
