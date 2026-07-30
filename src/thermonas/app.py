@@ -2,8 +2,8 @@
 
 from __future__ import annotations
 
+import os
 import sys
-from pathlib import Path
 
 import matplotlib
 import numpy as np
@@ -16,67 +16,11 @@ from matplotlib.ticker import FormatStrFormatter
 from PySide6.QtCore import Qt
 from PySide6.QtWidgets import QApplication, QLineEdit, QMainWindow, QMessageBox, QVBoxLayout
 
+from .predictor import TimeStepPredictor
 from .solver import SimulationParameters, solve
 from .ui_main_window import Ui_MainWindow
 
-MODEL_DIRECTORY = Path(__file__).resolve().parent / "models"
-MODEL_PATH = MODEL_DIRECTORY / "timestep_predictor.h5"
-SCALER_PATH = MODEL_DIRECTORY / "timestep_scaler.pkl"
 LARGE_SIMULATION_BYTES = 512 * 1024**2
-
-
-class TimeStepPredictor:
-    """Lazy loader for the optional neural-network stability estimator."""
-
-    def __init__(self) -> None:
-        self._model = None
-        self._scaler = None
-
-    def _load(self) -> None:
-        if self._model is not None:
-            return
-
-        try:
-            import joblib
-            from tensorflow.keras.models import load_model
-        except ImportError as exc:
-            raise RuntimeError(
-                "The time-step predictor requires the 'joblib' and 'tensorflow' packages."
-            ) from exc
-
-        if not MODEL_PATH.is_file() or not SCALER_PATH.is_file():
-            raise RuntimeError("The packaged time-step model or scaler is missing.")
-
-        self._model = load_model(MODEL_PATH, compile=False)
-        self._scaler = joblib.load(SCALER_PATH)
-
-    def suggest(self, parameters: SimulationParameters) -> float:
-        self._load()
-        assert self._model is not None and self._scaler is not None
-
-        minimum, maximum, increment = 1e-5, 8e-3, 1e-5
-        last_stable = minimum
-        for time_step in np.arange(minimum, maximum + increment / 2, increment):
-            features = np.array(
-                [
-                    [
-                        parameters.fluid_thermal_conductivity,
-                        parameters.solid_effective_thermal_conductivity,
-                        parameters.fluid_volumetric_heat_capacity,
-                        parameters.solid_volumetric_heat_capacity,
-                        parameters.velocity,
-                        time_step,
-                    ]
-                ]
-            )
-            prediction = float(
-                self._model.predict(self._scaler.transform(features), verbose=0)[0][0]
-            )
-            if prediction < 0.5:
-                break
-            last_stable = float(time_step)
-
-        return float(f"{last_stable:.2g}")
 
 
 class MainWindow(QMainWindow):
@@ -295,8 +239,17 @@ class MatplotlibCanvas(FigureCanvas):
 
 
 def main() -> int:
+    smoke_test = "--smoke-test" in sys.argv
+    if smoke_test:
+        sys.argv.remove("--smoke-test")
+        os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+
     app = QApplication.instance() or QApplication(sys.argv)
     window = MainWindow()
+    if smoke_test:
+        window.predictor._load()
+        app.processEvents()
+        return 0
     window.show()
     return app.exec()
 

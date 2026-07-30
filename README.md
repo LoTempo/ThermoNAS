@@ -74,8 +74,8 @@ boundary conditions are retained in
 
 ## Installation
 
-ThermoNAS supports Python 3.10-3.12. TensorFlow is the largest dependency, so a
-fresh virtual environment is recommended.
+ThermoNAS supports Python 3.10-3.12. A fresh virtual environment is
+recommended.
 
 ### Windows
 
@@ -142,16 +142,17 @@ ThermoNAS/
 │   └── thermonas_entry.py
 ├── src/thermonas/
 │   ├── models/
-│   │   ├── timestep_predictor.h5
-│   │   └── timestep_scaler.pkl
+│   │   └── timestep_predictor.npz
 │   ├── resources/
 │   │   └── main_window.ui
 │   ├── __init__.py
 │   ├── __main__.py
 │   ├── app.py
+│   ├── predictor.py
 │   ├── solver.py
 │   └── ui_main_window.py
 ├── tests/
+│   ├── test_predictor.py
 │   └── test_solver.py
 ├── pyproject.toml
 └── thermonas.spec
@@ -182,7 +183,8 @@ python -m pip install -e ".[build]"
 pyinstaller thermonas.spec
 ```
 
-The executable is written to `dist/ThermoNAS.exe`.
+The versioned executable is written to
+`dist/ThermoNAS-v<version>-Windows-x64.exe`.
 
 ## Model inputs and limitations
 
